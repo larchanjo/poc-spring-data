@@ -1,10 +1,9 @@
-package com.poc.springredis.services;
+package com.poc.springredis.domain;
 
-import com.poc.springredis.domain.Car;
-import com.poc.springredis.repositories.CarRepository;
 import java.util.Optional;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.data.domain.Example;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -45,9 +44,9 @@ public class CarService {
   }
 
   @Transactional(readOnly = true)
-  public Iterable<Car> getAll() {
+  public Iterable<Car> getAll(Example<Car> carExample) {
     log.info("Getting all {}", Car.class.getSimpleName());
-    return carRepository.findAll();
+    return carRepository.findAll(carExample);
   }
 
 }

@@ -1,13 +1,17 @@
 package com.poc.springredis.domain;
 
+import java.io.Serializable;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
-import javax.persistence.*;
-import java.io.Serializable;
-import java.util.UUID;
+import org.hibernate.annotations.GenericGenerator;
 
 /**
  * @author Luram Archanjo / 20180820
@@ -20,7 +24,9 @@ import java.util.UUID;
 public class Car implements Serializable {
 
   @Id
-  private final String id = UUID.randomUUID().toString();
+  @GeneratedValue(generator = "UUID")
+  @GenericGenerator(name = "UUID", strategy = "org.hibernate.id.UUIDGenerator")
+  private String id;
 
   @Column
   private String model;

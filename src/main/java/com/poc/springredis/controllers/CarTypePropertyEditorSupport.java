@@ -1,8 +1,8 @@
-package com.poc.springredis.domain;
+package com.poc.springredis.controllers;
 
-import lombok.extern.slf4j.Slf4j;
-
+import com.poc.springredis.domain.CarType;
 import java.beans.PropertyEditorSupport;
+import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 public class CarTypePropertyEditorSupport extends PropertyEditorSupport {
