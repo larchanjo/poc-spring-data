@@ -1,14 +1,18 @@
 # Overview
 
-This is a simple poc using [spring-data]
+This is a simple poc using [spring-data](http://projects.spring.io/spring-data)
 
-## Testing
+## Pre Requirements
 
-* `docker run --name poc-mysql -e MYSQL_ROOT_PASSWORD=123456 -d -p 3306:3306 mysql:5.7`
-* `docker exec -it poc-mysql bash`
-* `mysql -u root -p 123456`
-* `create database db_example`
-* `exit`
-* `mvn spring-boot:run`
+* Docker
+* Docker Compose
 
-[spring-data]: http://projects.spring.io/spring-data/
+## Setup
+
+To start the application we need to stat the MySQL first, running the command below:
+
+`docker-compose up -d`
+
+Then, start the application, running the command below:
+
+`mvn clean spring-boot:run`

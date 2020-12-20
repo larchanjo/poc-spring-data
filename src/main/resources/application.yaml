@@ -1,5 +1,4 @@
 server:
-  port: 8888
   servlet:
     context-path: "/api"
 spring:
@@ -9,5 +8,5 @@ spring:
   datasource:
     url: jdbc:mysql://localhost:3306/db_example
     username: root
-    password: 123456
+    password:
     driver-class-name: com.mysql.jdbc.Driver
